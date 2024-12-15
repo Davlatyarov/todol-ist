@@ -1,0 +1,307 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #524f4f;
+  background-color: #f4f4f4;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 1280px;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+}
+.loadingText {
+  text-align: "center";
+  color: "#999";
+  font-style: "italic";
+}
+a {
+  font-weight: 500;
+  color: #4caf50;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #4caf50;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  padding: 0;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3.3em;
+  line-height: 1.1;
+}
+
+/* todolist */
+
+/* General styling */
+
+/* TaskDo container */
+.taskdo-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Увеличена ширина */
+  padding: 30px; /* Увеличен отступ */
+  text-align: center;
+}
+
+/* Title */
+.taskdo-container h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  color: #524f4f;
+}
+
+/* Контейнер кнопки "Add New Task" */
+.add-task-button {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Контейнер для текста и плюсика */
+.add-task-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4caf50; /* Цвет текста */
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Круглая иконка плюсика */
+.plus-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4caf50; /* Цвет фона плюсика */
+  color: white; /* Цвет самого плюсика */
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50%; /* Делает круг */
+  width: 24px; /* Диаметр круга */
+  height: 24px;
+  margin-right: 8px; /* Отступ между плюсиком и текстом */
+}
+
+/* Текст кнопки */
+.add-task-text {
+  color: #4caf50;
+}
+
+.add-task-button:hover {
+  text-decoration: underline;
+}
+
+/* Task list */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0; /* Увеличен отступ */
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Task text */
+.task-text {
+  flex: 1;
+  text-align: left;
+  color: #524f4f;
+  font-size: 18px; /* Увеличен размер текста */
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #888888;
+}
+
+/* Checkbox */
+/* Чекбокс задачи */
+.task-checkbox {
+  appearance: none; /* Убираем стандартный чекбокс */
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px; /* Закругление для красивой кнопки */
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Стандартное состояние чекбокса */
+.task-checkbox:not(.completed) {
+  background-color: white;
+}
+
+/* Чекбокс при выполнении задачи */
+.task-checkbox.completed {
+  background-color: #4caf50; /* Зелёный фон */
+  border-color: #388e3c; /* Зелёная граница */
+}
+
+/* Добавляем иконку галочки при выполнении */
+.task-checkbox.completed::after {
+  content: "✔"; /* Галочка */
+  color: white;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Delete button */
+.task-delete {
+  background: none;
+  border: none;
+  color: #4caf50;
+  font-size: 20px; /* Увеличен размер кнопки */
+  cursor: pointer;
+}
+
+.task-delete:hover {
+  color: #4caf50;
+}
+
+/* CSS */
+.button-52 {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-52:after {
+  content: "";
+  background-color: #4caf50;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+/* CSS */
+.button-37 {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-right: 10px;
+}
+
+.button-37:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+/* CSS */
+.button-38 {
+  background-color: #f31111;
+  border: 1px solid #f31111;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-right: 20px;
+}
+
+.button-38:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .button-38 {
+    padding: 10px 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .button-37 {
+    padding: 10px 30px;
+  }
+}
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #c8cfd6;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #4caf50;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
