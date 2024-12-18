@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
-// Add task
-function TodoInput({ onAddTask, onCancel }) {
+
+function TodoInput({ onAddTask }) {
   const [task, setTask] = useState("");
+  const inputRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,35 +13,31 @@ function TodoInput({ onAddTask, onCancel }) {
     }
   };
 
-  return (
-    <div style={{ padding: "20px" }}>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-          placeholder="Enter task"
-          style={{
-            backgroundColor: "white",
-            color: "#524f4f",
-            fontSize: "18px",
-            fontWeight: "bold",
-            marginBottom: "10px",
-            padding: "10px",
-            width: "300px",
-            marginRight: "10px",
-            border: "1px solid #ccc",
-          }}
-        />
-        <button class="button-37" role="button">
-          Add Task
-        </button>
+  const handleBlur = () => {
+    if (!task.trim()) {
+      onAddTask(null); // Закрывает форму при пустом значении
+    }
+  };
 
-        <button class="button-38" onClick={onCancel} role="button">
-          Cancel
-        </button>
-      </form>
-    </div>
+  useEffect(() => {
+    inputRef.current.focus(); // Автофокус на инпут
+  }, []);
+
+  return (
+    <form onSubmit={handleSubmit} className="todo-form">
+      <input
+        type="text"
+        value={task}
+        ref={inputRef}
+        onBlur={handleBlur}
+        onChange={(e) => setTask(e.target.value)}
+        placeholder="Add task..."
+        className="task-input"
+      />
+      <button type="submit" className="add-task-btn">
+        Done
+      </button>
+    </form>
   );
 }
 
